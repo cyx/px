@@ -70,10 +70,10 @@ module PX
     def self.parse(xml)
       dict = XmlSimple.xml_in(xml, forcearray: false)
 
+      PX::Util.log(:info, self.name, dict.inspect)
+
       if dict["valid"] == "1" && dict["URI"]
         dict["URI"]
-      else
-        PX::Util.log(:warn, self.name, dict.inspect)
       end
     end
 
@@ -126,14 +126,14 @@ module PX
     def self.parse(xml)
       dict = XmlSimple.xml_in(xml, forcearray: false)
 
+      PX::Util.log(:info, self.name, dict.inspect)
+
       if dict["valid"] == "1" && dict["Success"] == "1"
         # Provide a more agnostic term so outside code
         # fetching it won't look too tied to PX.
         dict[:token] = dict["DpsBillingId"]
 
         return dict
-      else
-        PX::Util.log(:warn, self.name, dict.inspect)
       end
     end
 
@@ -171,12 +171,12 @@ module PX
     def self.parse(xml)
       dict = XmlSimple.xml_in(xml, forcearray: false)
 
-      data = dict["Transaction"]
+      PX::Util.log(:info, self.name, dict.inspect)
+
+      return unless data = dict["Transaction"]
 
       if data["success"] == "1" && data["responseText"] == "APPROVED"
         return data
-      else
-        PX::Util.log(:warn, self.name, dict.inspect)
       end
     end
 
