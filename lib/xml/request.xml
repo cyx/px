@@ -1,0 +1,16 @@
+<GenerateRequest>
+  <PxPayUserId>{{ uid }}</PxPayUserId>
+  <PxPayKey>{{ key }}</PxPayKey>
+  <MerchantReference>{{ ref }}</MerchantReference>
+  <TxnType>{{ type }}</TxnType>
+  <AmountInput>{{ "%0.2f" % amount }}</AmountInput>
+  <CurrencyInput>{{ currency }}</CurrencyInput>
+  <TxnData1>{{ this.h(data1) }}</TxnData1>
+  <TxnData2>{{ this.h(data2) }}</TxnData2>
+  <TxnData3>{{ this.h(data3) }}</TxnData3>
+  <EmailAddress>{{ this.h(email) }}</EmailAddress>
+  <TxnId>{{ this.h(txn_id) }}</TxnId>
+  <EnableAddBillCard>{{ add_bill_card ? 1 : 0 }}</EnableAddBillCard>
+  <UrlSuccess>{{ success_url }}</UrlSuccess>
+  <UrlFail>{{ fail_url }}</UrlFail>
+</GenerateRequest>

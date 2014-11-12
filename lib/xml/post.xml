@@ -1,0 +1,10 @@
+<Txn>
+  <PostUsername>{{ uid }}</PostUsername>
+  <PostPassword>{{ key }}</PostPassword>
+  <Amount>{{ "%0.2f" % amount }}</Amount>
+  <InputCurrency>{{ currency }}</InputCurrency>
+  <TxnType>{{ type }}</TxnType>
+  <TxnId>{{ this.h(txn_id) }}</TxnId>
+  <MerchantReference>{{ this.h(ref) }}</MerchantReference>
+  <DpsBillingId>{{ this.h(token) }}</DpsBillingId>
+</Txn>

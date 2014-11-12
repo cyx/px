@@ -1,0 +1,5 @@
+<ProcessResponse>
+  <PxPayUserId>{{ uid }}</PxPayUserId>
+  <PxPayKey>{{ key }}</PxPayKey>
+  <Response>{{ response }}</Response>
+</ProcessResponse>
