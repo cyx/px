@@ -1,4 +1,4 @@
-# PX: paymentexpress library
+## PX: paymentexpress library
 
 ```ruby
 
@@ -18,4 +18,4 @@
 
 ```
 
-LICENSE: MIT
+### LICENSE: MIT
