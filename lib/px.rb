@@ -81,18 +81,33 @@ module PX
       params = {
         uid: UID,
         key: KEY,
-        ref: data.fetch(:ref, ""),
+
+        # = Required parameters with smart defaults:
+        currency: data.fetch(:currency, "USD"),
+
+        # == Optimized for Token Billing defaults
+        #    (AUTH and Amount = 1 only)
         type: data.fetch(:type, TYPE_AUTH),
         amount: data.fetch(:amount, "1"),
-        currency: data.fetch(:currency, "USD"),
+
+        # = Optional parameters, but we make it mandatory
+        # in this library
+        email: data.fetch(:email),
+
+        # == Really optional (both in API and in lib)
+        ref: data.fetch(:ref, ""),
         data1: data.fetch(:data1, ""),
         data2: data.fetch(:data2, ""),
         data3: data.fetch(:data3, ""),
-        email: data.fetch(:email),
         txn_id: data.fetch(:txn_id, ""),
+
+        # == Given that we optimize for Token billing, we
+        #    default to `true`.
         add_bill_card: data.fetch(:add_bill_card, true),
+
         success_url: data.fetch(:success_url, SUCCESS_URL),
         fail_url: data.fetch(:fail_url, FAIL_URL),
+
         this: Hache,
       }
 
@@ -126,7 +141,14 @@ module PX
       params = {
         uid: UID,
         key: KEY,
+
+        # The only key we require for PX::Response
+        # is `response` which is obtained after
+        # a successful redirect with the `result`
+        # query string parameter.
+        #
         response: data.fetch(:response),
+
         this: Hache,
       }
 
