@@ -2,9 +2,9 @@
 
 Gem::Specification.new do |s|
   s.name = "px"
-  s.version = "0.0.1"
+  s.version = "0.0.2"
   s.summary = "PX library"
-  s.description = "PaymentExpress 1.0 integration library"
+  s.description = "PaymentExpress 2.0 integration library"
   s.authors = ["Cyril David"]
   s.email = ["cyx@cyx.is"]
   s.homepage = "http://cyx.is"
