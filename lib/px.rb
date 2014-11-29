@@ -62,7 +62,7 @@ module PX
     XML = File.expand_path("../xml/request.xml", __FILE__)
 
     # Endpoint for Request / Response related posts
-    URL = "https://sec.paymentexpress.com/pxpay/pxaccess.aspx"
+    URL = "https://sec.paymentexpress.com/pxaccess/pxpay.aspx"
 
     # <Request valid="1">
     #   <URI>https://sec.paymentexpress.com/pxmi3/XXXX</URI>
@@ -121,7 +121,7 @@ module PX
     XML = File.expand_path("../xml/response.xml", __FILE__)
 
     # Endpoint for Request / Response related posts
-    URL = "https://sec.paymentexpress.com/pxpay/pxaccess.aspx"
+    URL = "https://sec.paymentexpress.com/pxaccess/pxpay.aspx"
 
     def self.parse(xml)
       dict = XmlSimple.xml_in(xml, forcearray: false)
